@@ -1,0 +1,38 @@
+﻿@* 
+<div class="container">
+    <h3>Games List</h3>
+    <div class="container-fluid">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            @foreach ( var game in Games){
+
+                <div class="col" >
+                    <div class="card shadow-sm">
+                        <img src="@game.CoverImageURL" class="card-img-top" alt="@game.Title" height="150px" width="150px">
+                        <div class="card-body">
+                            <h5 class="card-title">@game.Title</h5>
+                            <p class="card-text">
+                                <p class="fst-normal">@game.Description</p>
+                                <br />
+                                <small class="text-muted">Price : @game.Price</small>
+                            </p>
+
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            };
+        </div>
+    </div>
+</div>
+
+
+@code {
+    List<Game> Games =  GamesController.GetGamesList();
+}
+  *@
