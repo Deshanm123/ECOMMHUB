@@ -84,7 +84,7 @@ namespace ECOMMHUB.Server.Controllers
 
         [HttpGet]
         [Route("getGamesList")]
-        public IActionResult GetGamesList()
+        public ActionResult<List<Game>> GetGamesList()
         {
             return Ok(GamesList);
         }
